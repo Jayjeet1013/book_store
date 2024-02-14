@@ -91,7 +91,7 @@ router.put("/:id", async (request, response) => {
 router.delete("/:id", async (request, response) => {
   try {
     const { id } = request.params;
-    const result = await Book.findByIdAndUpdate(id);
+    const result = await Book.findByIdAndDelete(id);
 
     if (!result) {
       return response.status(404).send({ message: "Book not found" });
